@@ -20,8 +20,8 @@ current_game_trophy_list = []
 current_game_trophy_details = {}
 
 # File to write results to
-filepath_100percent = "C:\\Users\\stein\\100percent.txt"
-filepath_trophies_current_game = "C:\\Users\\stein\\trophies.txt"
+filepath_100percent = os.getenv('FILEPATH_100PERCENT')
+filepath_trophies_current_game = os.getenv('FILEPATH_TROPHIES_CURRENT_GAME')
 
 
 
