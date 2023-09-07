@@ -55,12 +55,12 @@ for trophy_title in all_games:
         current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
         current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
     else:
-        if (games == 0):
+        if (games == 0 and current_game_trophies_all == None):
             current_game_np_id = trophy_title.np_communication_id
             for platform in trophy_title.title_platform:
                 current_game_platform = platform.value
-            current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
-            current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
+            # current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
+            # current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
     bronze_all += trophy_title.defined_trophies.bronze
     silver_all += trophy_title.defined_trophies.silver
     gold_all += trophy_title.defined_trophies.gold
