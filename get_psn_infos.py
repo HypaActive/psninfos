@@ -51,6 +51,10 @@ for trophy_title in all_games:
     if (trophy_title.title_name.startswith(current_game_twitch) and current_game_trophies_all == None):
         current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
         current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
+    #try to match Twitch game name with PSN game name upper case (e.g. Twitch: Christmas Massacre, PSN: CHRISTMAS MASSACRE)
+    elif (trophy_title.title_name.startswith(current_game_twitch.upper()) and current_game_trophies_all == None):
+        current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
+        current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
     elif (trophy_title.title_name.startswith(re.search(pattern="(\w+)\s?", string=current_game_twitch).group(0)) and current_game_trophies_all == None):
         current_game_trophies_all = trophy_title.defined_trophies.bronze + trophy_title.defined_trophies.silver + trophy_title.defined_trophies.gold + trophy_title.defined_trophies.platinum
         current_game_trophies_earned = trophy_title.earned_trophies.bronze + trophy_title.earned_trophies.silver + trophy_title.earned_trophies.gold + trophy_title.earned_trophies.platinum
